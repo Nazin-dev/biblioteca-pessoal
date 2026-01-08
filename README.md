@@ -40,11 +40,6 @@ Opção A (VS Code):
 * Clique com o botão direito em `index.html`
 * Open with Live Server
 
-Opção B (terminal):
-```bash
-npx serve .
-```
-
 ## Se der erro “Falha ao buscar livros”
 * Confirme que `npm run api` está rodando
 * Teste a API: http://localhost:3000/books
