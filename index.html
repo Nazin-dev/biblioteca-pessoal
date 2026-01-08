@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca Pessoal</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <header class="container py-4 d-flex align-items-center justify-content-between">
+      <div>
+        <h1 class="text-light m-0">Biblioteca Pessoal</h1>
+        <div class="muted">Organizando minhas leituras.</div>
+      </div>
+
+      <button id="btnOpenCreate" class="btn btn-primary">+ Novo livro</button>
+    </header>
+
+    <main class="container pb-5">
+      <section class="card mb-3">
+        <div class="card-body">
+          <div class="row g-3 align-items-end">
+            <div class="col-12 col-lg-5">
+              <label for="search" class="form-label muted">Buscar</label>
+              <input id="search" class="form-control" type="text" placeholder="Título ou autor..." />
+            </div>
+
+            <div class="col-12 col-lg-3">
+              <label for="genreFilter" class="form-label muted">Gênero</label>
+              <select id="genreFilter" class="form-select">
+                <option value="">Todos</option>
+                <option value="Romance">Romance</option>
+                <option value="Clássico">Clássico</option>
+                <option value="Teatro">Teatro</option>
+                <option value="Fantasia">Fantasia</option>
+                <option value="Tecnologia">Tecnologia</option>
+                <option value="Outros">Outros</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-lg-2">
+              <label for="statusFilter" class="form-label muted">Status</label>
+              <select id="statusFilter" class="form-select">
+                <option value="">Todos</option>
+                <option value="vou_ler">Vou ler</option>
+                <option value="lendo">Estou lendo</option>
+                <option value="lido">Já li</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-lg-2 d-grid">
+              <button id="btnClear" class="btn btn-outline-light">Limpar</button>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2 align-items-center mt-3">
+            <span id="count" class="badge text-bg-secondary">0 livros</span>
+            <span id="loading" class="muted d-none">Carregando...</span>
+          </div>
+
+          <div id="error" class="alert alert-danger mt-3 d-none" role="alert"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-dark table-hover align-middle m-0">
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th>Autor</th>
+                  <th>Gênero</th>
+                  <th>Ano</th>
+                  <th>Status</th>
+                  <th class="text-end">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
+
+          <div id="empty" class="text-center muted py-4 d-none">
+            Nenhum livro encontrado.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal fade" id="bookModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content modal-dark">
+          <div class="modal-header modal-dark-border">
+            <h5 class="modal-title" id="modalTitle">Novo livro</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+
+          <form id="form">
+            <div class="modal-body">
+              <input type="hidden" id="bookId" />
+
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="title" class="form-label muted">Título</label>
+                  <input id="title" class="form-control" required maxlength="120" />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="author" class="form-label muted">Autor</label>
+                  <input id="author" class="form-control" required maxlength="120" />
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label for="genre" class="form-label muted">Gênero</label>
+                  <select id="genre" class="form-select" required>
+                    <option value="">Selecione</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Clássico">Clássico</option>
+                    <option value="Teatro">Teatro</option>
+                    <option value="Fantasia">Fantasia</option>
+                    <option value="Tecnologia">Tecnologia</option>
+                    <option value="Outros">Outros</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label for="year" class="form-label muted">Ano</label>
+                  <input id="year" class="form-control" type="number" min="1400" max="2100" required />
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <label for="status" class="form-label muted">Status</label>
+                  <select id="status" class="form-select" required>
+                    <option value="vou_ler">Vou ler</option>
+                    <option value="lendo">Estou lendo</option>
+                    <option value="lido">Já li</option>
+                  </select>
+                </div>
+              </div>
+
+              <div id="formError" class="alert alert-danger mt-3 d-none" role="alert"></div>
+            </div>
+
+            <div class="modal-footer modal-dark-border">
+              <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary" id="btnSave">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

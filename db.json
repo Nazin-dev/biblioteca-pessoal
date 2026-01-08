@@ -1,0 +1,30 @@
+{
+  "books": [
+    {
+      "title": "Cartas do Diabo ao Seu Aprendiz",
+      "author": "C. S. Lewis",
+      "genre": "Clássico",
+      "year": 1942,
+      "status": "lido",
+      "totalPages": 216,
+      "currentPage": 216,
+      "rating": null,
+      "notes": "",
+      "createdAt": "2026-01-06T11:38:22.499Z",
+      "id": 1
+    },
+    {
+      "title": "Cristianismo Puro e Simples",
+      "author": "C. S. Lewis",
+      "genre": "Clássico",
+      "year": 1952,
+      "status": "quero_ler",
+      "totalPages": 267,
+      "currentPage": 0,
+      "rating": null,
+      "notes": "",
+      "createdAt": "2026-01-06T11:39:50.755Z",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+body {
+        background: #0b1020;
+}
+
+.card {
+  background: #121a33;
+  border-color: #223059;
+}
+
+.table thead th {
+  color: #aab1c7;
+}
+
+.muted {
+  color: #aab1c7;
+}
+
+.form-control,
+.form-select {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: #223059;
+  color: #e7eaf3;
+}
+
+.form-control::placeholder {
+  color: #aab1c7;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background: rgba(255, 255, 255, 0.03);
+  color: #e7eaf3;
+  border-color: rgba(110, 168, 254, 0.75);
+  box-shadow: none;
+}
+
+.table td,
+.table th {
+  border-color: rgba(34, 48, 89, 0.75);
+  color: #e7eaf3;
+}
+
+:root { color-scheme: dark; }
+
+.form-select { color-scheme: dark; }
+
+.form-select option {
+  background-color: #121a33;
+  color: #e7eaf3;
+}
+
+
+:root { color-scheme: dark; }
+
+.modal-content {
+  background: #121a33 !important;
+  border: 1px solid #223059 !important;
+  color: #e7eaf3 !important;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: rgba(34, 48, 89, 0.75) !important;
+}
+
+.modal-title { color: #e7eaf3 !important; }
+
+.form-control,
+.form-select {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: #223059 !important;
+  color: #e7eaf3 !important;
+}
+
+.form-control::placeholder { color: #aab1c7 !important; }
+
+.form-select option {
+  background-color: #121a33;
+  color: #e7eaf3;
+}
