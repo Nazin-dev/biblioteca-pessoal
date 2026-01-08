@@ -18,13 +18,18 @@
       "author": "C. S. Lewis",
       "genre": "Clássico",
       "year": 1952,
-      "status": "quero_ler",
-      "totalPages": 267,
-      "currentPage": 0,
-      "rating": null,
-      "notes": "",
+      "status": "lido",
       "createdAt": "2026-01-06T11:39:50.755Z",
       "id": 2
+    },
+    {
+      "title": "Panorama do Novo Testamento",
+      "author": "Augustus Nicodemos",
+      "genre": "Clássico",
+      "year": 2015,
+      "status": "lido",
+      "createdAt": "2026-01-08T17:03:56.326Z",
+      "id": 3
     }
   ]
 }

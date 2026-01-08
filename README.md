@@ -49,3 +49,7 @@ Opção A (VS Code):
 ```bash
 npm run api
 ```
+
+
+# Evolução do Projeto
+* Usar uma API real para buscar as informçaões dos livros: https://openlibrary.org/developers/api
